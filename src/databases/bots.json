@@ -1,0 +1,38 @@
+{
+	"703827267968565483": {
+		"id": "703827267968565483",
+		"name": "LovelyBot | RP",
+		"tag": "2947",
+		"prefix": "+",
+		"uploaded_by": "471121992439955457",
+		"owners" : ["471121992439955457"],
+		"server" : "XebmCtA",
+		"short_desc" : "A Bot made for Roleplay.",
+		"description" : "Lorem ipsum dolor sit amet consectetur adipiscing elit varius inceptos convallis, id nunc ad congue nostra dictumst sem integer. Fusce fringilla pharetra aenean eleifend lacus turpis hac nisl, dictumst sagittis felis sollicitudin leo lobortis posuere nibh, primis erat quam dapibus integer malesuada ridiculus. Convallis gravida aliquam posuere nec taciti accumsan platea, neque mus blandit cursus nam dui luctus, nullam curabitur eros magna fames facilisi. Odio auctor a purus porttitor viverra nibh, tincidunt lobortis congue mi aliquam senectus convallis, augue felis cubilia duis egestas.\nPorttitor netus pellentesque litora justo ridiculus eu placerat massa praesent auctor, suspendisse dictum aliquet felis curabitur urna nulla varius vestibulum. Sodales nibh sed tempus dictumst convallis, posuere pretium pharetra facilisis erat senectus, leo duis per primis. Ante curae non mattis vitae nibh pharetra quam scelerisque imperdiet, interdum primis rhoncus est libero nulla morbi velit tempus, nisi placerat in dapibus fames vivamus dictumst dictum.\nDignissim fringilla a eleifend morbi euismod tortor nunc luctus, tincidunt est sodales felis primis maecenas hendrerit tristique, tempus ligula natoque posuere faucibus pellentesque montes. Interdum nisi dignissim vitae dui nibh a senectus placerat eros, litora dapibus congue facilisi vestibulum scelerisque sed consequat dis, morbi id suspendisse cursus risus at eget orci.",
+		"downvotes" : 0,
+		"upvotes" : 0,
+		"tags": ["Economy", "Game", "Roleplay"],
+		"website": "http://lovelybot-rp.xyz",
+		"status": "online",
+		"aproved": true,
+		"verified": true
+	},
+	"699758073950240939": {
+		"id": "699758073950240939",
+		"name": "LovelyBot",
+		"tag": "1998",
+		"prefix": "lv!",
+		"uploaded_by": "471121992439955457",
+		"owners" : ["471121992439955457"],
+		"server" : "XebmCtA",
+		"short_desc" : "A bot made for Moderation",
+		"description" : "A long description here",
+		"downvotes" : 0,
+		"upvotes" : 0,
+		"tags": ["Moderation"],
+		"website": "http://lovelybot.lovelybot-rp.xyz",
+		"status": "online",
+		"aproved": false,
+		"verified": true
+	}
+}

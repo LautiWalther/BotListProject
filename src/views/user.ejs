@@ -1,0 +1,76 @@
+<%- include("partials/header", {title: "Bot List" }); %>
+
+<link rel="stylesheet" href="/assets/css/md.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<style>
+	h1 {
+    margin: 10px 0;
+    font-size: 56px !important;
+    color: #75C9C8;
+    text-align: center;
+}
+.badge_icon {
+	width: 30px;
+}
+</style>
+<div class="container">
+	<span class="header">
+		<img class="icon" src="<%=clientejs.users.cache.get(user_to_show.id).displayAvatarURL({dynamic:true});%>" width="100px">
+		<h1><%=user_to_show.username%>#<%=user_to_show.discriminator%></h1>
+		<div class="badge-holder">
+			<% if (user_to_show) { -%>
+				
+			<% } -%>
+			<%
+			user_to_show.flags.toArray().forEach(badge => {
+				switch(badge) {
+					case "DISCORD_EMPLOYEE": %>
+						<img class="badge_icon" src="/assets/img/employee.gif" alt="">
+						<%break;
+					case "PARTNERED_SERVER_OWNER": %>
+						<img class="badge_icon" src="/assets/img/serverpartner.gif" alt="">
+						<%break;
+					case "DISCORD_PARTNER": %>
+						<img class="badge_icon" src="/assets/img/partner.png" alt="">
+						<%break;
+					case "HYPESQUAD_EVENTS": %>
+						<img class="badge_icon" src="/assets/img/hypesquadevent.gif" alt="">
+						<%break;
+					case "BUGHUNTER_LEVEL_1": %>
+						<img class="badge_icon" src="/assets/img/bughunter.png" alt="">
+						<%break;
+					case "HOUSE_BRAVERY": %>
+						<img class="badge_icon" src="/assets/img/bravery.png" alt="">
+						<%break;
+					case "HOUSE_BRILLIANCE": %>
+						<img class="badge_icon" src="/assets/img/brilliance.png" alt="">
+						<%break;
+					case "HOUSE_BALANCE": %>
+						<img class="badge_icon" src="/assets/img/balance.png" alt="">
+						<%break;
+					case "EARLY_SUPPORTER": %>
+						<img class="badge_icon" src="/assets/img/early.png" alt="">
+						<%break;
+					case "BUGHUNTER_LEVEL_2": %>
+						<img class="badge_icon" src="/assets/img/bughunter2.png" alt="">
+						<%break;
+					case "EARLY_VERIFIED_DEVELOPER": %>
+						<img class="badge_icon" src="/assets/img/developer.png" alt="">
+						<%break;
+				}
+			})
+			%>
+		</div>
+	</span>
+	<div id="cards">
+		<%bot_owner.forEach(bot => { %>
+			<div class="card">
+				<img class="icon" src="<%=clientejs.users.cache.get(bot.id).displayAvatarURL({dynamic:true});%>">
+				<h2 style="color:#75C9C8 !important; margin-bottom: 0;" class="title"><%=bot.name%></h2>
+				<p class="desc" style="color: #80A1D4;"><%=bot.short_desc%></p>
+				<a class="small btn btn-outline-primary" href="/bot/<%=bot.id%>">Ver Bot</a>
+			</div>
+		<%})%>
+	</div>
+</div>

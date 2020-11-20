@@ -1,0 +1,85 @@
+<%- include("partials/header", {title: "Bot List" }); %>
+<link rel="stylesheet" href="/assets/css/md.css">
+<style>
+a {
+    text-decoration: none;
+    transition: 0.5s;
+}
+#owners {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.owner {
+  display: inline-block;
+  height: 30px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  margin: 15px;
+  background-color: #ece8ed);
+}
+
+.owner img {
+  border-radius: 50%;
+  font-size: 20px;
+  margin-right: 5px;
+}
+a:hover {
+  color: #75C9C8;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+                <div class="bg-light border rounded shadow card">
+                	<center>
+                		<img class="card-img-top" style="width:100px;height:100px;" src="<%=bot.displayAvatarURL({dynamic:true})%>" /><br>
+
+						<% if (bot.presence.status === 'online') { -%>
+							<i class="fas fa-circle" style="color:#06b700;"></i><span>&nbsp;Conectado</span>
+						<% } else if(bot.presence.status === 'dnd') { -%>
+							<i class="fas fa-circle" style="color:#ff0000"></i><span>&nbsp;Ocupado</span>
+						<% } else if(bot.presence.status === 'idle') { -%>
+							<i class="fas fa-circle" style="color:#ff8700"></i><span>&nbsp;Inactivo</span>
+						<% } else { -%>
+							<i class="fas fa-circle"></i><span>&nbsp;Desconectado</span>
+						<% }-%>
+                	
+                    <div class="card-body">
+                        <h3 class="card-title" style="font-family: Antic, sans-serif;color: rgb(81,87,94);"><%=bot_db.name%>#<%=bot_db.tag%></h3>
+                        <h5 class="card-sub-title" style="font-family: Antic, sans-serif;color: #7289da;">Tags : <%=bot_db.tags.join(' - ')%></h5>
+                        <h5 class="card-sub-title" style="font-family: Antic, sans-serif;">Prefix : <span style="color:red"><%=bot_db.prefix%><span></h5>
+                        <p class="card-text" style="font-family: Antic, sans-serif;color: rgb(114, 137, 218);"></p>
+                        <p><%=bot_db.short_desc%></p>
+                        &nbsp;
+                    	<a href='https://discord.com/oauth2/authorize?client_id=<%=bot_db.id%>&scope=bot&permissions=8' class="btn btn-outline-info" target="_blank" style="font-weight: normal;font-family: Antic, sans-serif;">Invitar</a>
+                        &nbsp;
+                    	<a href='<%=bot_db.website%>' class="btn btn-outline-info" target="_blank" style="font-weight: normal;font-family: Antic, sans-serif;">Web</a>
+                        &nbsp;
+                    	<a href='https://discord.gg/<%=bot_db.server%>' class="btn btn-outline-info" target="_blank" style="font-weight: normal;font-family: Antic, sans-serif;">Server</a>
+                        <% if (user) { -%>
+                          <% if (bot_db.owners.includes(user.id)) { -%>
+                          <%=console.log('hola');%>
+                            <a class="small btn btn-outline-primary" href="/edit/<%=bot.id%>">Editar <i class="fas fa-pencil-alt"></i></a>
+                            <a class="small btn btn-outline-primary" href="//<%=bot.id%>">Eliminar <i class="fas fa-trash"></i></a>
+                          <% } -%>
+                        <% } -%>
+                        <%authors.forEach(a => { %>
+                        <div id="owners">
+                            <a class="owner" href="/user/<%=a.id%>">
+                                <img src="<%=a.displayAvatarURL({dynamic:true})%>" height="30px">
+                                <span class="navtext"><%=a.username%>#<%=a.discriminator%></span>
+                            </a>
+                        </div>
+                        <%})%>
+                        <section id="bot_description" style="background-color: rgb(240,240,240); padding: 10px; border-radius: 1rem;"></section>
+                    </div>
+                    </center>
+            </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  var str = `<%=bot_db.description%>`;
+  $('#bot_description').html(str.replace(/\n/gi, '<br>'));  
+</script>

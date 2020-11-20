@@ -1,0 +1,22 @@
+{
+	"servidor1":{
+		"usuario1":{
+			"dinero":2165,
+			"banco":251
+		},
+		"usuario2":{
+			"dinero":5121,
+			"banco":969
+		}
+	},
+	"servidor2":{
+		"usuario1":{
+			"dinero":24,
+			"banco":212
+		},
+		"usuario2":{
+			"dinero":5681,
+			"banco":957
+		}
+	}
+}

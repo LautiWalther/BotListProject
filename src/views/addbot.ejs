@@ -1,0 +1,55 @@
+<%- include("partials/header", {title: "Bot List" }); %>
+<link rel="stylesheet" href="/assets/css/md.css">
+
+<link rel="stylesheet" href="/assets/css/md.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<div class="content">
+	<span class="header">
+		<h1>Añade tu Bot</h1>
+		<p>Rellena los siguientes campos y presiona en añadir para agregarlo en la lista de espera.</p>
+	</span>
+	<br>
+	<div class="container">
+		<form action="/bot/addbot" class="center form-group" method="post">
+			<div class="form-row">
+				<div class="col">
+				    <label>ID</label>
+					 	<input name="id" type="text" class="form-control">
+				</div>
+				<div class="col">
+				    <label>Prefix</label>
+				    <input name="prefix" type="text" class="form-control">
+				</div>
+			</div>
+		  <div class="form-group">
+		    <label>Owners</label>
+		    <input name="owners" type="text" class="form-control">
+		  </div>
+		  <div class="form-group">
+		    <label>Server</label>
+		    <input name="server" type="text" class="form-control">
+		  </div>
+		  <div class="form-group">
+		    <label>Resumen</label>
+		    <input name="short_desc" type="text" class="form-control">
+		  </div>
+		  <div class="form-group">
+		    <label>Tags</label>
+		    <input name="tags" type="text" class="form-control">
+		  </div>
+		  <div class="form-group">
+		    <label>Website</label>
+		    <input name="website" type="text" class="form-control">
+		  </div>
+		  <div class="form-group">
+		    <label>Descripcion</label>
+		    <textarea name="description" type="text" class="form-control"></textarea>
+		  </div>
+		  <div class="form-group">
+		  	<button class="btn btn-outline-success">Añadir</button>
+		  </div>
+		</form>
+	</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
